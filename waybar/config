@@ -1,0 +1,134 @@
+{
+    "layer": "top",
+      "position": "top",
+      "margin-bottom": 0,
+      "modules-left": [
+        "clock",
+        "hyprland/workspaces"
+        ],
+      "modules-center": [
+        "hyprland/window"
+        ],
+      "modules-right": [
+        "network",
+        "temperature",
+        "memory",
+        "cpu",
+        "pulseaudio",
+        "battery",
+        "bluetooth",
+        "custom/powermenu"
+      ],
+      "tray": {
+        "icon-size": 24,
+        "spacing": 10
+      },
+      "hyprland/window": {
+        "format": "󰣇 {}",
+        "rewrite": {
+            "(\\d\\. )?(.*) - Chromium": "<span color=\"#ffffff\">󰊯</span>  $2 ",
+            "nvim (.*)": "<span color=\"#ffffff\">󰈚</span>  $1",
+            "nvim": "<span color=\"#ffffff\">󰈚 Neovim</span> ",
+            "ranger(.*)": "<span color=\"#ffffff\">󰉋</span>  $1",
+            "Search(.*)": "<span color=\"#ffffff\">󰍉</span>  Search$1"
+        },
+        "separate-outputs": false
+      },
+      "hyprland/submap": {
+        "format": "✌️ {}",
+        "max-length": 8,
+        "tooltip": true
+      },
+      "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+          "1": "󰲠",
+          "2": "󰲢",
+          "3": "󰲤",
+          "4": "󰲦",
+          "5": "󰲨",
+          "6": "󰲪",
+          "7": "󰲬",
+          "8": "󰲮",
+          "9": "󰲰",
+          "10": "󰿬",
+          "-99": "",
+          "active": "",
+          "default": ""
+        }
+      },
+      "network": {
+        "interface": "wlan0",
+        "tooltip-format-ethernet": "{ifname} ",
+        "interval": 2,
+        "format": "󰖩  {bandwidthDownBits}  {bandwidthUpBits}",
+        "format-disconnected": "󰖪",
+        "on-click": "nm-connection-editor"
+      },
+      "temperature": {
+        "format": "󰔏 {temperatureC}°C",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-icons": ["󰔏", "󰔐", "󰔐"]
+      },
+      "memory": {
+        "format": "󰍛 {}%",
+        "tooltip": false
+      },
+      "cpu": {
+        "format": "󰻠 {usage}%",
+        "tooltip": false
+      },
+      "custom/powermenu": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "exec wlogout -p layer-shell"
+      },
+      "custom/updates": {
+        "format": "󰚰 {}",
+        "tooltip": false,
+        "interval": 3600,
+        "exec": "exec $HOME/.config/waybar/checkupdate.sh"
+      },
+      "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% 󰂯",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰄝",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+      },
+      "battery": {
+        "states": {
+          "warning": 30,
+          "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      },
+      "clock": {
+        "format": "󰅐 {:%H:%M}",
+        "interval": 60,
+        "tooltip": true,
+        "tooltip-format": "{:%d %B %H:%M}"
+      },
+      "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+      }
+  }

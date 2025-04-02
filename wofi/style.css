@@ -1,0 +1,40 @@
+window {
+    background-color: #000000;  /* Deep plum purple */
+    border-radius: 10px;
+    font-family: "Hack Nerd Font";
+}
+
+#input {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    color: #ffffff;
+    background-color: #3b0764;  /* Darker plum */
+    border-radius: 30px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#text {
+    margin: 5px;
+    color: #ffffff;
+}
+
+#entry:selected {
+    background-color: #3b0764;  /* Darker plum */
+    border-radius: 30px;
+}
+
+#text:selected {
+    color: #ffffff;
+}

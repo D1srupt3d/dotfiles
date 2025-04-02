@@ -1,0 +1,55 @@
+# Pink and Olive theme for btop
+
+# Main bg
+theme[main_bg]="#1a1b1a"
+
+# Main text colors
+theme[title]="#fc2e64"          # Pink
+theme[main_fg]="#fc2e64"        # Pink
+theme[hi_fg]="#4a4a2f"          # Olive
+theme[selected_fg]="#ffffff"     # White text for selected items
+theme[selected_bg]="#fc2e64"    # Pink for selection
+theme[inactive_fg]="#fc2e64"    # Pink for inactive
+theme[graph_text]="#fc2e64"     # Pink for graph text
+theme[meter_text]="#fc2e64"     # Pink for meter text
+
+# Graphs boxes
+theme[cpu_box]="#fc2e64"
+theme[mem_box]="#fc2e64"
+theme[net_box]="#fc2e64"
+theme[proc_box]="#fc2e64"
+
+# Graph colors
+theme[cpu_start]="#fc2e64"
+theme[cpu_mid]="#4a4a2f"
+theme[cpu_end]="#4a4a2f"
+
+theme[mem_start]="#fc2e64"
+theme[mem_mid]="#4a4a2f"
+theme[mem_end]="#4a4a2f"
+
+theme[net_start]="#fc2e64"
+theme[net_mid]="#4a4a2f"
+theme[net_end]="#4a4a2f"
+
+# Meter bg
+theme[meter_bg]="#1a1b1a"
+
+# Additional elements
+theme[div_line]="#fc2e64"
+theme[proc_misc]="#4a4a2f"
+
+# Caution and Danger colors
+theme[temp_start]="#fc2e64"
+theme[temp_mid]="#4a4a2f"
+theme[temp_end]="#ff0000"
+
+# Various
+theme[free_end]="#fc2e64"
+theme[cached_end]="#4a4a2f"
+theme[available_end]="#fc2e64"
+
+# Process list
+theme[process_start]="#fc2e64"
+theme[process_mid]="#4a4a2f"
+theme[process_end]="#4a4a2f"

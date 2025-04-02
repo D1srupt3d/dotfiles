@@ -1,0 +1,25 @@
+configuration {
+    modi: "drun,run,window,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus";
+    terminal: "ghostty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window";
+    display-Network: " 󰤨  Network";
+    display-filebrowser: "   Files";
+    sidebar-mode: true;
+
+    /* Other settings */
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    scroll-method: 0;
+    window-format: "{w} · {c} · {t}";
+}
+
+@theme "~/.config/rofi/theme.rasi"
