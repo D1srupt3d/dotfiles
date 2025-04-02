@@ -9,14 +9,21 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 - **Dunst**: Lightweight notification daemon
 - **Wofi**: Application launcher
 - **Wlogout**: Logout menu
-- **Hyprpaper**: Wallpaper daemon for Hyprland
+- **Btop**: System monitor
+- **Fastfetch**: System information tool
+- **Ghpstty**: Terminal configuration
+- **Rofi**: Application launcher (alternative to Wofi)
 
 ## Directory Structure
 
 ```
 .
+├── btop/          # System monitor configuration
 ├── dunst/         # Notification daemon configuration
+├── fastfetch/     # System information configuration
+├── ghpstty/       # Terminal configuration
 ├── hypr/          # Hyprland configuration
+├── rofi/          # Application launcher configuration
 ├── scripts/       # Utility scripts
 ├── wallpapers/    # Wallpaper collection
 ├── waybar/        # Status bar configuration
@@ -29,20 +36,22 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 1. Clone this repository:
 ```bash
 git clone https://github.com/yourusername/hypr-dots.git
+cd hypr-dots
 ```
 
-2. Copy the configurations to their respective locations:
+2. Install gitstow:
 ```bash
-cp -r dunst ~/.config/
-cp -r hypr ~/.config/
-cp -r waybar ~/.config/
-cp -r wofi ~/.config/
-cp -r wlogout ~/.config/
+sudo pacman -S gitstow
 ```
 
 3. Install required dependencies:
 ```bash
-sudo pacman -S hyprland waybar dunst wofi wlogout hyprpaper
+sudo pacman -S hyprland waybar dunst wofi wlogout btop fastfetch ghpstty rofi
+```
+
+4. Use gitstow to symlink the configurations:
+```bash
+gitstow btop dunst fastfetch ghpstty hypr rofi waybar wlogout wofi
 ```
 
 ## Features
@@ -50,9 +59,11 @@ sudo pacman -S hyprland waybar dunst wofi wlogout hyprpaper
 - Modern Wayland compositor with Hyprland
 - Customizable status bar with Waybar
 - Notification system with Dunst
-- Application launcher with Wofi
+- Application launchers with both Wofi and Rofi
 - Logout menu with Wlogout
-- Wallpaper management with Hyprpaper
+- System monitoring with Btop
+- System information display with Fastfetch
+- Terminal configuration with Ghpstty
 
 ## Customization
 
