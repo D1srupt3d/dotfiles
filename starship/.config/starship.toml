@@ -1,162 +1,150 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Use custom format
+# Increases the command timeout to prevent warnings
+command_timeout = 1000
+
+# Removes the blank line between shell prompts
+add_newline = false
+
+# Custom format configuration
 format = """
-[╭─](bold blue)\
 $username\
 $hostname\
 $directory\
 $git_branch\
 $git_status\
-$python\
-$nodejs\
-$golang\
-$rust\
-$ansible\
+$git_metrics\
+$fill\
+$kubernetes\
 $terraform\
 $docker_context\
-$kubernetes\
+$nodejs\
+$package\
+$memory_usage\
+$battery\
+$time\
+$shell\
 $cmd_duration\
-$line_break\
-$custom\
 $line_break\
 $character"""
 
-# Disable the package module, hiding it from the prompt
-[package]
-disabled = true
+# Fill module
+[fill]
+symbol = "─"
+style = "bold black"
 
-# Customize the directory prompt
-[directory]
-style = "bold cyan"
-read_only = " 🔒"
-truncation_length = 3
-
-# Customize the git branch prompt
-[git_branch]
-symbol = "🌿 "
-style = "bold purple"
-
-# Customize the git status prompt
-[git_status]
-style = "bold green"
-ahead = "⇡"
-behind = "⇣"
-diverged = "⇕"
-renamed = "➜"
-deleted = "✖"
-stashed = "📦"
-modified = "📝"
-staged = '[+]'
-untracked = "?"
-conflicted = "!"
-up_to_date = "✓"
-
-# Python configuration
-[python]
-symbol = "🐍 "
-style = "bold green"
-pyenv_version_name = true
-pyenv_prefix = "pyenv "
-python_version = true
-
-# Node.js configuration
-[nodejs]
-symbol = "⬢ "
-style = "bold green"
-disabled = false
-detect_extensions = ["js", "mjs", "cjs", "jsx", "ts", "tsx", "json"]
-detect_files = ["package.json", ".node-version", ".nvmrc"]
-detect_folders = ["node_modules"]
-
-# Go configuration
-[golang]
-symbol = "🐹 "
-style = "bold cyan"
-disabled = false
-detect_extensions = ["go"]
-detect_files = ["go.mod", "go.work"]
-detect_folders = ["vendor"]
-
-# Rust configuration
-[rust]
-symbol = "🦀 "
-style = "bold red"
-disabled = false
-detect_extensions = ["rs"]
-detect_files = ["Cargo.toml"]
-detect_folders = ["target"]
-
-# Ansible configuration
-[ansible]
-symbol = "⚙️ "
-style = "bold yellow"
-disabled = false
-detect_files = ["ansible.cfg", "inventory", "playbook.yml"]
-detect_folders = ["roles", "group_vars", "host_vars"]
-
-# Terraform configuration
-[terraform]
-symbol = "🌍 "
-style = "bold purple"
-disabled = false
-detect_files = ["main.tf", "variables.tf", "outputs.tf"]
-detect_folders = [".terraform"]
-
-# Docker context configuration
-[docker_context]
-symbol = "🐳 "
-style = "bold blue"
-disabled = false
-detect_files = ["docker-compose.yml", "Dockerfile"]
-detect_folders = [".docker"]
-
-# Kubernetes configuration
-[kubernetes]
-symbol = "☸️ "
-style = "bold blue"
-disabled = false
-detect_files = ["kubeconfig", "k8s.yaml"]
-detect_folders = ["k8s", "kubernetes"]
-
-# Command duration configuration
-[cmd_duration]
-min_time = 500
-style = "bold yellow"
-
-# Character configuration
+# Replace the "❯" symbol in the prompt with "󰆍]"
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
-vimcmd_symbol = "[❮](bold green)"
+success_symbol = "[󰆍](#FF0000)"
+error_symbol = "[󰆍](#FF0000)"
 
-# Line break configuration
-[line_break]
+# Cloud/Infrastructure tools
+[terraform]
+symbol = "󱁢 "
+format = "[$symbol$version]($style) "
+style = "bold 105"
+
+[kubernetes]
+symbol = "󱃾 "
+format = '[$symbol$context( \($namespace\))]($style) '
+style = "bold blue"
 disabled = false
 
-# Username configuration
+[docker_context]
+symbol = "󰡨 "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+
+# Development tools
+[nodejs]
+symbol = "󰎙 "
+format = "via [$symbol$version](bold green) "
+
+[package]
+symbol = "󰏗 "
+format = "[$symbol$version]($style) "
+style = "208"
+
+# Git information
+[git_branch]
+symbol = "󰘬 "
+format = "[$symbol$branch]($style) "
+style = "bold purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+
+# System info
 [username]
 style_user = "bold blue"
-style_root = "bold black"
-disabled = false
+format = "[$user]($style) "
 show_always = true
 
-# Hostname configuration
 [hostname]
-ssh_only = true
-style = "bold blue"
+ssh_only = false
+format = "[@$hostname](bold red) "
 disabled = false
-trim_at = "."
 
-# Custom system information module
-[custom.system]
-command = """
-echo "[$(ps -p $$ -o comm=)](bold blue) | \
-[CPU: $(top -bn1 | grep "Cpu(s)" | awk '{print $2}')%](bold red) | \
-[RAM: $(free -m | awk '/Mem:/ {printf "%.1f%%", $3/$2*100}')](bold green) | \
-[$(date '+%H:%M:%S')](bold yellow)"
-"""
-when = true
-shell = ["bash", "zsh"]
-style = "bold dimmed"
+[directory]
+style = "bold cyan"
+read_only = "󰌾 "
+truncation_length = 4
+truncate_to_repo = false
+
+# Command duration
+[cmd_duration]
+min_time = 500
+format = "took [$duration](bold yellow) "
+
+# Time
+[time]
+disabled = false
+format = '[\[ $time \]](#A575F4) '
+time_format = "%R"
+style = "bold #A575F4"
+
+# Shell indicator
+[shell]
+fish_indicator = "🐟 "
+powershell_indicator = "⚡ "
+unknown_indicator = "❓ "
+style = "cyan bold"
+disabled = false
+
+# Battery module
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+unknown_symbol = "⌛ "
+empty_symbol = "! "
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+# Memory usage
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = "󰍛 "
+style = "bold dimmed green"
+format = "$symbol[${ram}]($style) "
+
+# Add after your other git configurations
+[git_metrics]
+added_style = "bold green"
+deleted_style = "bold red"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
+
