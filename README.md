@@ -11,8 +11,7 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 - **Wlogout**: Logout menu
 - **Btop**: System monitor
 - **Fastfetch**: System information tool
-- **Ghpstty**: Terminal configuration
-- **Rofi**: Application launcher (alternative to Wofi)
+- **Ghostty**: Terminal configuration
 - **Thunar**: File manager
 - **Hyprshot**: Screenshot tool
 - **Hyprlock**: Screen locker
@@ -28,7 +27,6 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 ├── fastfetch/     # System information configuration
 ├── ghpstty/       # Terminal configuration
 ├── hypr/          # Hyprland configuration
-├── rofi/          # Application launcher configuration
 ├── scripts/       # Utility scripts
 ├── wallpapers/    # Wallpaper collection
 ├── waybar/        # Status bar configuration
@@ -56,12 +54,12 @@ sudo pacman -S gitstow
 
 3. Install required dependencies:
 ```bash
-sudo pacman -S hyprland waybar dunst wofi wlogout btop fastfetch ghostty rofi thunar hyprshot hyprlock hyprpaper hypridle
+sudo pacman -S hyprland waybar dunst wofi wlogout btop fastfetch ghostty thunar hyprshot hyprlock hyprpaper hypridle
 ```
 
-4. Use gitstow to symlink the configurations:
+4. Use git stow to symlink the configurations:
 ```bash
-gitstow btop dunst fastfetch ghpstty hypr rofi waybar wlogout wofi thunar hyprshot hyprlock hyprpaper hypridle
+stow btop dunst fastfetch ghpstty hypr rofi waybar wlogout wofi thunar hyprshot hyprlock hyprpaper hypridle
 ```
 
 ## Features
@@ -69,7 +67,7 @@ gitstow btop dunst fastfetch ghpstty hypr rofi waybar wlogout wofi thunar hyprsh
 - Modern Wayland compositor with Hyprland
 - Customizable status bar with Waybar
 - Notification system with Dunst
-- Application launchers with both Wofi and Rofi
+- Application launchers with Wofi
 - Logout menu with Wlogout
 - System monitoring with Btop
 - System information display with Fastfetch
