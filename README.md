@@ -13,6 +13,11 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 - **Fastfetch**: System information tool
 - **Ghpstty**: Terminal configuration
 - **Rofi**: Application launcher (alternative to Wofi)
+- **Thunar**: File manager
+- **Hyprshot**: Screenshot tool
+- **Hyprlock**: Screen locker
+- **Hyprpaper**: Wallpaper daemon
+- **Hypridle**: Idle management tool
 
 ## Directory Structure
 
@@ -28,7 +33,12 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 ├── wallpapers/    # Wallpaper collection
 ├── waybar/        # Status bar configuration
 ├── wlogout/       # Logout menu configuration
-└── wofi/          # Application launcher configuration
+├── wofi/          # Application launcher configuration
+├── thunar/        # File manager configuration
+├── hyprshot/      # Screenshot tool configuration
+├── hyprlock/      # Screen locker configuration
+├── hyprpaper/     # Wallpaper daemon configuration
+└── hypridle/      # Idle management tool configuration
 ```
 
 ## Installation
@@ -46,12 +56,12 @@ sudo pacman -S gitstow
 
 3. Install required dependencies:
 ```bash
-sudo pacman -S hyprland waybar dunst wofi wlogout btop fastfetch ghpstty rofi
+sudo pacman -S hyprland waybar dunst wofi wlogout btop fastfetch ghostty rofi thunar hyprshot hyprlock hyprpaper hypridle
 ```
 
 4. Use gitstow to symlink the configurations:
 ```bash
-gitstow btop dunst fastfetch ghpstty hypr rofi waybar wlogout wofi
+gitstow btop dunst fastfetch ghpstty hypr rofi waybar wlogout wofi thunar hyprshot hyprlock hyprpaper hypridle
 ```
 
 ## Features
