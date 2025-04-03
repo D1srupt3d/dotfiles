@@ -41,29 +41,3 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
-
-# Ghostty Configuration for Hyprland
-
-# Font configuration
-font-family = Hack Nerd Font
-font-size = 16
-font-feature = liga 1
-font-feature = calt 1
-
-# Window configuration
-window-padding-x = 10
-window-padding-y = 10
-window-theme = dark
-window-decoration = none
-window-save-state = always
-
-# Colors (Black and Plum Purple theme)
-background = #000000
-foreground = #DDA0DD
-selection-foreground = #000000
-selection-background = #8B4513
-cursor-color = #DDA0DD
-
-# Transparency and blur settings
-background-opacity = 0.9
-background-blur-radius = 20
