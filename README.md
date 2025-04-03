@@ -2,6 +2,17 @@
 
 A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 
+## 🖼️ Screenshots
+
+![Desktop](assets/screenshots/desktop.png)
+*Main desktop with Waybar and Wofi*
+
+![Lock Screen](assets/screenshots/lock.png)
+*Lock screen with Hyprlock*
+
+![Terminal](assets/screenshots/terminal.png)
+*Terminal with custom prompt and ASCII art*
+
 ## Components
 
 - **Hyprland**: Modern Wayland compositor

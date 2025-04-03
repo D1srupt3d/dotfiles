@@ -18,6 +18,16 @@ if [ ! -S ~/.ssh/ssh-agent.sock ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
 
+# Start SSH agent and add key
+if [ -z "$SSH_AUTH_SOCK" ]; then
+   eval "$(ssh-agent -s)" > /dev/null 2>&1
+fi
+
+# Add SSH key if it exists and isn't already added
+if [ -f "$HOME/.ssh/D1srupted" ]; then
+    ssh-add -l | grep "D1srupted" > /dev/null 2>&1 || ssh-add "$HOME/.ssh/D1srupted" > /dev/null 2>&1
+fi
+
 # Enable Starship
 eval "$(starship init zsh)"
 
