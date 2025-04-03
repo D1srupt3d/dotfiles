@@ -7,7 +7,7 @@
 }
 
 #waybar {
-    background: #4c1d95;  /* Deep plum purple background */
+    background: transparent;
     color: #ffffff;
     font-size: 16px;
     font-family: "Hack Nerd Font";
