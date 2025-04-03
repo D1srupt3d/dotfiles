@@ -1,0 +1,162 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Use custom format
+format = """
+[╭─](bold blue)\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$golang\
+$rust\
+$ansible\
+$terraform\
+$docker_context\
+$kubernetes\
+$cmd_duration\
+$line_break\
+$custom\
+$line_break\
+$character"""
+
+# Disable the package module, hiding it from the prompt
+[package]
+disabled = true
+
+# Customize the directory prompt
+[directory]
+style = "bold cyan"
+read_only = " 🔒"
+truncation_length = 3
+
+# Customize the git branch prompt
+[git_branch]
+symbol = "🌿 "
+style = "bold purple"
+
+# Customize the git status prompt
+[git_status]
+style = "bold green"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+renamed = "➜"
+deleted = "✖"
+stashed = "📦"
+modified = "📝"
+staged = '[+]'
+untracked = "?"
+conflicted = "!"
+up_to_date = "✓"
+
+# Python configuration
+[python]
+symbol = "🐍 "
+style = "bold green"
+pyenv_version_name = true
+pyenv_prefix = "pyenv "
+python_version = true
+
+# Node.js configuration
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+disabled = false
+detect_extensions = ["js", "mjs", "cjs", "jsx", "ts", "tsx", "json"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+# Go configuration
+[golang]
+symbol = "🐹 "
+style = "bold cyan"
+disabled = false
+detect_extensions = ["go"]
+detect_files = ["go.mod", "go.work"]
+detect_folders = ["vendor"]
+
+# Rust configuration
+[rust]
+symbol = "🦀 "
+style = "bold red"
+disabled = false
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+detect_folders = ["target"]
+
+# Ansible configuration
+[ansible]
+symbol = "⚙️ "
+style = "bold yellow"
+disabled = false
+detect_files = ["ansible.cfg", "inventory", "playbook.yml"]
+detect_folders = ["roles", "group_vars", "host_vars"]
+
+# Terraform configuration
+[terraform]
+symbol = "🌍 "
+style = "bold purple"
+disabled = false
+detect_files = ["main.tf", "variables.tf", "outputs.tf"]
+detect_folders = [".terraform"]
+
+# Docker context configuration
+[docker_context]
+symbol = "🐳 "
+style = "bold blue"
+disabled = false
+detect_files = ["docker-compose.yml", "Dockerfile"]
+detect_folders = [".docker"]
+
+# Kubernetes configuration
+[kubernetes]
+symbol = "☸️ "
+style = "bold blue"
+disabled = false
+detect_files = ["kubeconfig", "k8s.yaml"]
+detect_folders = ["k8s", "kubernetes"]
+
+# Command duration configuration
+[cmd_duration]
+min_time = 500
+style = "bold yellow"
+
+# Character configuration
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+# Line break configuration
+[line_break]
+disabled = false
+
+# Username configuration
+[username]
+style_user = "bold blue"
+style_root = "bold black"
+disabled = false
+show_always = true
+
+# Hostname configuration
+[hostname]
+ssh_only = true
+style = "bold blue"
+disabled = false
+trim_at = "."
+
+# Custom system information module
+[custom.system]
+command = """
+echo "[$(ps -p $$ -o comm=)](bold blue) | \
+[CPU: $(top -bn1 | grep "Cpu(s)" | awk '{print $2}')%](bold red) | \
+[RAM: $(free -m | awk '/Mem:/ {printf "%.1f%%", $3/$2*100}')](bold green) | \
+[$(date '+%H:%M:%S')](bold yellow)"
+"""
+when = true
+shell = ["bash", "zsh"]
+style = "bold dimmed"
