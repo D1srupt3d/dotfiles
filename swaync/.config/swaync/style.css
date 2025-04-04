@@ -1,0 +1,139 @@
+* {
+    font-family: "Hack Nerd Font";
+    font-size: 16px;
+}
+
+.notification-row {
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+.notification {
+    background: #3b0764;
+    padding: 0;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 6px 12px;
+    margin: 0;
+}
+
+.close-button {
+    background: #3b0764;
+    color: #ffffff;
+    text-shadow: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 30px;
+}
+
+.close-button:hover {
+    background: #4b0a7a;
+    transition: all 0.2s ease-in-out;
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+}
+
+.notification-default-action:hover {
+    background: #4b0a7a;
+}
+
+.control-center {
+    background: #3b0764;
+    border-radius: 30px;
+    padding: 6px 12px;
+    margin: 10px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.widget-title {
+    color: #ffffff;
+    background: #3b0764;
+    padding: 6px 12px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.widget-title > button {
+    color: #ffffff;
+    background: #3b0764;
+    border-radius: 30px;
+    padding: 6px 12px;
+}
+
+.widget-title > button:hover {
+    background: #4b0a7a;
+}
+
+.widget-dnd {
+    color: #ffffff;
+    background: #3b0764;
+    padding: 6px 12px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.widget-dnd > switch {
+    background: #4b0a7a;
+    border-radius: 30px;
+}
+
+.widget-dnd > switch:checked {
+    background: #ffffff;
+}
+
+.widget-dnd > switch slider {
+    background: #ffffff;
+    border-radius: 30px;
+}
+
+.widget-dnd > switch:checked slider {
+    background: #3b0764;
+}
+
+.notification-action {
+    color: #ffffff;
+    background: #3b0764;
+    padding: 6px 12px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.notification-action:hover {
+    background: #4b0a7a;
+}
+
+.notification-action:active {
+    background: #5b0d8a;
+}
+
+.notification-default-action {
+    color: #ffffff;
+    background: #3b0764;
+    padding: 6px 12px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.notification-default-action:hover {
+    background: #4b0a7a;
+}
+
+.notification-default-action:active {
+    background: #5b0d8a;
+} 
