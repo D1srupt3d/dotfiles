@@ -5,7 +5,8 @@
       "modules-left": [
         "clock",
         "hyprland/workspaces",
-        "hyprland/submap"
+        "hyprland/submap",
+        "custom/spotify"
         ],
       "modules-center": [
         "hyprland/window"
@@ -17,6 +18,7 @@
         "cpu",
         "pulseaudio",
         "battery",
+        "custom/notifications",
         "custom/powermenu"
       ],
       "tray": {
@@ -120,5 +122,21 @@
         "interval": 60,
         "tooltip": true,
         "tooltip-format": "{:%d %B %H:%M}"
+      },
+      "custom/spotify": {
+        "format": "󰎈 {}",
+        "max-length": 40,
+        "interval": 1,
+        "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-middle": "playerctl -p spotify previous",
+        "on-click-right": "playerctl -p spotify next"
+      },
+      "custom/notifications": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/notification-count.sh",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "interval": 1
       }
   }

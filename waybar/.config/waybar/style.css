@@ -33,7 +33,9 @@
 #pulseaudio,
 #custom-updates,
 #network,
-#battery {
+#battery,
+#custom-spotify,
+#custom-notifications {
     padding: 6px 12px;
     background-color: #3b0764;  /* Darker plum for modules */
     border-radius: 30px;
@@ -53,10 +55,40 @@
 #memory,
 #network,
 #clock,
-#battery {
+#battery,
+#custom-spotify,
+#custom-notifications {
     color: #ffffff;
 }
 
 #battery.charging {
+    color: #ffffff;
+}
+
+#custom-spotify {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0;
+}
+
+#custom-spotify.playing {
+    color: #1DB954;  /* Spotify green */
+}
+
+#custom-spotify.paused {
+    color: #ffffff;
+}
+
+#custom-notifications {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0;
+}
+
+#custom-notifications.dnd {
+    color: #ff0000;
+}
+
+#custom-notifications.notifications {
     color: #ffffff;
 }
