@@ -10,6 +10,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# SSH Agent Configuration
+# This section automatically starts the SSH agent if it's not running
+# Add your SSH keys manually after setting this up
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval $(ssh-agent -s) > /dev/null 2>&1
+fi
+
 # Enable Starship
 eval "$(starship init zsh)"
 
