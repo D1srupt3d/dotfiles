@@ -58,7 +58,7 @@ elif [[ $SYSTEM == "MacOS" ]]; then
     alias search='brew search'
     alias install='brew install'
     # Enable colorized output for ls on MacOS
-    alias ls='ls -G'
+    alias ls='eza --color=auto'
 elif [[ $SYSTEM == "WSL" ]]; then
     # WSL-specific aliases (assuming Ubuntu/Debian based)
     alias update='sudo apt update && sudo apt upgrade'
@@ -71,9 +71,9 @@ fi
 
 # Useful aliases
 alias nf='clear && neofetch run'
-alias ll='ls -lah'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='eza -lah'
+alias la='eza -A'
+alias l='eza -CF'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias vim='nvim'
@@ -90,7 +90,6 @@ alias gl='git log --oneline'
 alias bup='brew update && brew upgrade'
 
 # Directory shortcuts
-alias dev='cd ~/Development'
 alias docs='cd ~/Documents'
 alias dl='cd ~/Downloads'
 
@@ -152,3 +151,21 @@ eval "$(starship init zsh)"
 # Remove the basic prompt since we're using starship
 # PROMPT='%F{cyan}%n%f@%F{magenta}%m%f:%F{yellow}%~%f ${vcs_info_msg_0_}%# '
 
+# FZF configuration
+if [[ -d "/opt/homebrew/opt/fzf" ]]; then
+  # Source FZF keybindings and completion (Homebrew install)
+  [[ -f "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" ]] && source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+  [[ -f "/opt/homebrew/opt/fzf/shell/completion.zsh" ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+fi
+
+# FZF default options (customize as desired)
+export FZF_DEFAULT_OPTS='
+  --height 40%
+  --layout=reverse
+  --border
+  --preview "bat --style=numbers --color=always --line-range :500 {} 2>/dev/null || cat {} 2>/dev/null"
+  --preview-window=right:60%
+'
+
+# TheFuck
+eval $(thefuck --alias)
