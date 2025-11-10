@@ -19,9 +19,11 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 
-# Homebrew Configuration
-eval "$(/opt/homebrew/bin/brew shellenv)"
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# Homebrew Configuration (macOS only)
+if [[ $SYSTEM == "MacOS" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 
 # Basic auto/tab completion
 autoload -U compinit
@@ -87,7 +89,7 @@ alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
 alias gl='git log --oneline'
-alias bup='brew update && brew upgrade'
+# bup alias is defined in macOS-specific section above
 
 # Directory shortcuts
 alias docs='cd ~/Documents'
