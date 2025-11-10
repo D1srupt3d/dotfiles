@@ -89,7 +89,6 @@ alias gp='git push'
 alias gpl='git pull'
 alias gd='git diff'
 alias gl='git log --oneline'
-# bup alias is defined in macOS-specific section above
 
 # Directory shortcuts
 alias docs='cd ~/Documents'
@@ -101,7 +100,7 @@ mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 
-# extract - Extract most know archives with one command
+# extract - Extract most known archives with one command
 extract() {
     if [ -f $1 ] ; then
         case $1 in
@@ -154,10 +153,15 @@ eval "$(starship init zsh)"
 # PROMPT='%F{cyan}%n%f@%F{magenta}%m%f:%F{yellow}%~%f ${vcs_info_msg_0_}%# '
 
 # FZF configuration
-if [[ -d "/opt/homebrew/opt/fzf" ]]; then
+if [[ $SYSTEM == "MacOS" ]] && [[ -d "/opt/homebrew/opt/fzf" ]]; then
   # Source FZF keybindings and completion (Homebrew install)
   [[ -f "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" ]] && source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
   [[ -f "/opt/homebrew/opt/fzf/shell/completion.zsh" ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+elif command -v fzf &> /dev/null; then
+  # Source FZF keybindings and completion (system install)
+  [[ -f "/usr/share/fzf/key-bindings.zsh" ]] && source "/usr/share/fzf/key-bindings.zsh"
+  [[ -f "/usr/share/fzf/completion.zsh" ]] && source "/usr/share/fzf/completion.zsh"
+  [[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
 fi
 
 # FZF default options (customize as desired)
@@ -170,4 +174,6 @@ export FZF_DEFAULT_OPTS='
 '
 
 # TheFuck
-eval $(thefuck --alias)
+if command -v thefuck &> /dev/null; then
+    eval $(thefuck --alias)
+fi
