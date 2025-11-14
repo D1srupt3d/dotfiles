@@ -1,3 +1,4 @@
+# Starship Configuration - Graphite Theme
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -9,6 +10,7 @@ add_newline = false
 
 # Custom format configuration
 format = """
+$os\
 $username\
 $hostname\
 $directory\
@@ -20,30 +22,40 @@ $kubernetes\
 $terraform\
 $docker_context\
 $nodejs\
+$python\
+$rust\
 $package\
 $memory_usage\
 $battery\
 $time\
-$shell\
 $cmd_duration\
 $line_break\
 $character"""
 
-# Fill module
+# Fill module - subtle gray
 [fill]
 symbol = "─"
-style = "bold black"
+style = "bold #4a4a4a"
 
-# Replace the "❯" symbol in the prompt with "󰆍]"
+# Prompt character - cyan for success, red for error
 [character]
-success_symbol = "[󰆍](#FF0000)"
-error_symbol = "[󰆍](#FF0000)"
+success_symbol = "[❯](bold cyan)"
+error_symbol = "[❯](bold red)"
 
-# Cloud/Infrastructure tools
+# OS symbol - white
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "bold white"
+
+[os.symbols]
+Arch = " "
+
+# Cloud/Infrastructure tools - blue tones
 [terraform]
 symbol = "󱁢 "
 format = "[$symbol$version]($style) "
-style = "bold 105"
+style = "bold #5f87d7"
 
 [kubernetes]
 symbol = "󱃾 "
@@ -54,72 +66,96 @@ disabled = false
 [docker_context]
 symbol = "󰡨 "
 format = "via [$symbol$context]($style) "
-style = "blue bold"
+style = "bold #5f87af"
 
-# Development tools
+# Development tools - each gets a distinct color
 [nodejs]
 symbol = "󰎙 "
-format = "via [$symbol$version](bold green) "
+format = "via [$symbol$version]($style) "
+style = "bold green"
+
+[python]
+symbol = " "
+format = "via [$symbol$version]($style) "
+style = "bold yellow"
+
+[rust]
+symbol = "🦀 "
+format = "via [$symbol$version]($style) "
+style = "bold #d75f00"
 
 [package]
 symbol = "󰏗 "
 format = "[$symbol$version]($style) "
-style = "208"
+style = "bold #af5f00"
 
-# Git information
+# Git information - green/red for visibility
 [git_branch]
-symbol = "󰘬 "
-format = "[$symbol$branch]($style) "
-style = "bold purple"
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold green"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "bold red"
+conflicted = "🏳"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = "✓"
+untracked = "?${count}"
+stashed = "📦"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
 
-# System info
+[git_metrics]
+added_style = "bold green"
+deleted_style = "bold red"
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+disabled = false
+
+# System info - clean white/gray with pops of color
 [username]
-style_user = "bold blue"
-format = "[$user]($style) "
+style_user = "bold cyan"
+style_root = "bold red"
+format = "[$user]($style)"
 show_always = true
 
 [hostname]
 ssh_only = false
-format = "[@$hostname](bold red) "
+format = "[@$hostname]($style) "
+style = "bold white"
 disabled = false
 
 [directory]
-style = "bold cyan"
-read_only = "󰌾 "
-truncation_length = 4
-truncate_to_repo = false
+style = "bold blue"
+read_only = " 󰌾"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
 
-# Command duration
+# Command duration - yellow for visibility
 [cmd_duration]
 min_time = 500
-format = "took [$duration](bold yellow) "
+format = "took [$duration]($style) "
+style = "bold yellow"
 
-# Time
+# Time - magenta accent
 [time]
 disabled = false
-format = '[\[ $time \]](#A575F4) '
+format = '[\[ $time \]]($style) '
 time_format = "%R"
-style = "bold #A575F4"
+style = "bold magenta"
 
-# Shell indicator
-[shell]
-fish_indicator = "🐟 "
-powershell_indicator = "⚡ "
-unknown_indicator = "❓ "
-style = "cyan bold"
-disabled = false
-
-# Battery module
+# Battery module - color coded by level
 [battery]
-full_symbol = "🔋 "
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
-unknown_symbol = "⌛ "
-empty_symbol = "! "
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+unknown_symbol = " "
+empty_symbol = " "
 
 [[battery.display]]
 threshold = 100
@@ -133,18 +169,10 @@ style = "bold yellow"
 threshold = 20
 style = "bold red"
 
-# Memory usage
+# Memory usage - cyan accent
 [memory_usage]
 disabled = false
 threshold = -1
 symbol = "󰍛 "
-style = "bold dimmed green"
+style = "bold cyan"
 format = "$symbol[${ram}]($style) "
-
-# Add after your other git configurations
-[git_metrics]
-added_style = "bold green"
-deleted_style = "bold red"
-format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
-disabled = false
-

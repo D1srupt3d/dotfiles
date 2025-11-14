@@ -1,6 +1,6 @@
-# Hyprland Dotfiles
+# Hyprland Dotfiles - Graphite Theme
 
-A collection of dotfiles for a modern Hyprland setup on Arch Linux.
+A collection of dotfiles for a modern Hyprland setup on Arch Linux with a clean Graphite theme.
 
 ## 🖼️ Screenshots
 
@@ -15,7 +15,7 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 - **Btop**: System monitor
 - **Dunst**: Lightweight notification daemon
 - **Fastfetch**: System information tool with custom ASCII art
-- **Ghostty**: Modern terminal emulator with Tokyo Night theme
+- **Ghostty**: Modern terminal emulator with Graphite theme
 - **Hyprland**: Modern Wayland compositor
 - **Hypridle**: Idle management tool
 - **Hyprlock**: Screen locker
@@ -37,7 +37,7 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 ├── btop/          # System monitor configuration
 ├── dunst/         # Notification daemon configuration
 ├── fastfetch/     # System information configuration with custom ASCII art
-├── ghostty/       # Terminal configuration with Tokyo Night theme
+├── ghostty/       # Terminal configuration with Graphite theme
 ├── hypr/          # Hyprland configuration
 ├── hypridle/      # Idle management tool configuration
 ├── hyprlock/      # Screen locker configuration
@@ -58,15 +58,16 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux.
 
 - Modern Wayland compositor with Hyprland
 - Customizable status bar with Waybar
-- Notification system with Dunst and Swaync
-- Application launchers with Wofi
-- Logout menu with Wlogout
+- Notification system with Swaync
+- Application launcher with Wofi
+- Power menu with Wlogout
 - System monitoring with Btop
 - System information display with Fastfetch and custom ASCII art
-- Terminal configuration with Ghostty and Tokyo Night theme
+- Terminal configuration with Ghostty
 - Cross-shell prompt with Starship
 - Custom Zsh configuration with aliases and functions
 - Screenshot tool with Hyprshot
 - Screen locker with Hyprlock
 - Wallpaper management with Hyprpaper
 - Idle management with Hypridle
+- **Graphite Theme**: Cohesive gray/white color scheme across all components

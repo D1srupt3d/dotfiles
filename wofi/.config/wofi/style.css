@@ -1,7 +1,9 @@
+/* Wofi - Graphite Theme */
+
 window {
     background-size: cover;
     background-position: center;
-    background-color: rgba(74, 74, 74, 0.95);  /* Gray with transparency */
+    background-color: rgba(74, 74, 74, 0.95);  /* Graphite - Gray with transparency */
     border-radius: 20px;
     font-family: "Hack Nerd Font";
     border: 2px solid #3a3a3a;  /* Darker gray border */

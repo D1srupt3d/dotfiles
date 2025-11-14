@@ -1,4 +1,4 @@
-# Modern Ghostty Configuration
+# Modern Ghostty Configuration - Graphite Theme
 
 # Font settings
 font-family = Hack Nerd Font
@@ -10,11 +10,11 @@ window-padding-y = 20
 window-height = 30
 window-width = 120
 
-# Background settings
+# Graphite Theme - Background settings
 background = #2a2a2a
 background-opacity = 0.85
 
-# Text colors
+# Graphite Theme - Text colors
 foreground = #ffffff
 
 # Terminal settings
