@@ -11,11 +11,11 @@ window-height = 30
 window-width = 120
 
 # Background settings
-background = #1a1b26
+background = #2a2a2a
 background-opacity = 0.85
 
 # Text colors
-foreground = #a9b1d6
+foreground = #ffffff
 
 # Terminal settings
 term = xterm-ghostty
@@ -26,7 +26,6 @@ gtk-single-instance = desktop
 gtk-titlebar = true
 gtk-tabs-location = top
 gtk-wide-tabs = true
-gtk-adwaita = true
 
 # Copy on select
 copy-on-select = true
