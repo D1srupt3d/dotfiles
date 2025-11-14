@@ -1,10 +1,10 @@
 window {
     background-size: cover;
     background-position: center;
-    background-color: rgba(76, 29, 149, 0.95);  /* Deep plum purple with transparency */
+    background-color: rgba(74, 74, 74, 0.95);  /* Gray with transparency */
     border-radius: 20px;
     font-family: "Hack Nerd Font";
-    border: 2px solid #3b0764;  /* Darker plum border */
+    border: 2px solid #3a3a3a;  /* Darker gray border */
 }
 
 #outer-box {
@@ -34,7 +34,7 @@ window {
     padding: 10px 15px;
     border: none;
     color: #ffffff;
-    background-color: rgba(59, 7, 100, 0.8);  /* Darker plum with transparency */
+    background-color: rgba(58, 58, 58, 0.8);  /* Darker gray with transparency */
     border-radius: 30px;
     font-size: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -67,7 +67,7 @@ window {
 }
 
 #entry:selected {
-    background-color: rgba(59, 7, 100, 0.8);  /* Darker plum with transparency */
+    background-color: rgba(58, 58, 58, 0.8);  /* Darker gray with transparency */
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
