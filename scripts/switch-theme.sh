@@ -249,6 +249,9 @@ if pgrep swaync &>/dev/null; then
     swaync-client --reload-config &>/dev/null && echo -e "${GREEN}  ✓ SwayNC${NC}" || echo -e "${YELLOW}  ⚠ SwayNC reload failed${NC}"
 fi
 
+# Ghostty (auto-reloads via inotify file watching — no signal needed)
+echo -e "${GREEN}  ✓ Ghostty${NC}"
+
 # Hyprpaper
 if command -v hyprctl &>/dev/null && [ -n "$WALLPAPER" ]; then
     WALLPAPER_PATH="$DOTFILES_DIR/$WALLPAPER"
@@ -262,5 +265,4 @@ if command -v hyprctl &>/dev/null && [ -n "$WALLPAPER" ]; then
 fi
 
 echo -e "\n${GREEN}${BOLD}Theme '$THEME_NAME' applied!${NC}"
-echo -e "${YELLOW}Note: Wofi and Wlogout will use the new theme on next launch.${NC}"
-echo -e "${YELLOW}Note: Ghostty will use the new theme in new windows.${NC}\n"
+echo -e "${YELLOW}Note: Wofi and Wlogout will use the new theme on next launch.${NC}\n"
