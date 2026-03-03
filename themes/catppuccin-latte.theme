@@ -1,0 +1,31 @@
+# =============================================================
+# Catppuccin Latte Theme (Light)
+# Official palette: https://catppuccin.com/palette
+# =============================================================
+THEME_NAME="catppuccin-latte"
+
+BG="#eff1f5"
+SURFACE="#e6e9ef"
+SURFACE2="#dce0e8"
+ACCENT="#ccd0da"
+ACCENT2="#bcc0cc"
+BORDER_DIM="#9ca0b0"
+BORDER="#7287fd"
+BORDER_BRIGHT="#1e66f5"
+TEXT="#4c4f69"
+TEXT_DIM="#6c6f85"
+
+CRITICAL="#d20f39"
+CRITICAL_HOVER="#e64553"
+WARNING="#fe640b"
+INFO="#1e66f5"
+
+HYPR_BORDER1="7287fdee"
+HYPR_BORDER2="04a5e5ff"
+HYPR_BORDER3="1e66f5ff"
+HYPR_BORDER_INACTIVE="ccd0da77"
+HYPR_SHADOW="acb0beee"
+
+GHOSTTY_BG="#eff1f5"
+GHOSTTY_FG="#4c4f69"
+WALLPAPER="wallpapers/catppuccin-latte.jpg"

@@ -1,0 +1,31 @@
+# =============================================================
+# Tokyo Night Theme
+# Official palette: https://github.com/enkia/tokyo-night-vscode-theme
+# =============================================================
+THEME_NAME="tokyo-night"
+
+BG="#1a1b26"
+SURFACE="#16161e"
+SURFACE2="#2f3549"
+ACCENT="#3b4261"
+ACCENT2="#545c7e"
+BORDER_DIM="#3b4261"
+BORDER="#7aa2f7"
+BORDER_BRIGHT="#bb9af7"
+TEXT="#c0caf5"
+TEXT_DIM="#565f89"
+
+CRITICAL="#f7768e"
+CRITICAL_HOVER="#ff9e9e"
+WARNING="#e0af68"
+INFO="#7aa2f7"
+
+HYPR_BORDER1="7aa2f7ee"
+HYPR_BORDER2="bb9af7ff"
+HYPR_BORDER3="c0caf5ff"
+HYPR_BORDER_INACTIVE="1a1b2677"
+HYPR_SHADOW="0d0f17ee"
+
+GHOSTTY_BG="#1a1b26"
+GHOSTTY_FG="#c0caf5"
+WALLPAPER="wallpapers/tokyo-night.png"

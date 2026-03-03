@@ -1,4 +1,10 @@
-/* Waybar - Graphite Theme */
+/* Waybar - Theme colors injected by scripts/switch-theme.sh */
+/* THEME:START */
+@define-color wb_accent #4a5555;
+@define-color wb_text #d3c6aa;
+@define-color wb_critical #e67e80;
+@define-color wb_spotify #1DB954;
+/* THEME:END */
 
 * {
     border: none;
@@ -10,19 +16,19 @@
 
 #waybar {
     background: transparent;
-    color: #ffffff;
+    color: @wb_text;
     font-size: 16px;
     font-family: "Hack Nerd Font";
 }
 
 #workspaces button {
     padding: 0 5px;
-    color: #ffffff;
+    color: @wb_text;
 }
 
 #workspaces button.active {
-    color: #ffffff;
-    background: #4a4a4a;  /* Gray for active workspace */
+    color: @wb_text;
+    background: @wb_accent;
 }
 
 #custom-powermenu,
@@ -40,14 +46,14 @@
 #custom-updates,
 #disk {
     padding: 6px 12px;
-    background-color: #4a4a4a;  /* Gray for modules */
+    background-color: @wb_accent;
     border-radius: 30px;
     margin: 8px 6px;
-    color: #ffffff;
+    color: @wb_text;
 }
 
 #window {
-    color: #ffffff;
+    color: @wb_text;
 }
 
 #custom-updates,
@@ -61,11 +67,11 @@
 #battery,
 #custom-spotify,
 #custom-notifications {
-    color: #ffffff;
+    color: @wb_text;
 }
 
 #battery.charging {
-    color: #ffffff;
+    color: @wb_text;
 }
 
 #custom-spotify {
@@ -75,11 +81,11 @@
 }
 
 #custom-spotify.playing {
-    color: #1DB954;  /* Spotify green */
+    color: @wb_spotify;
 }
 
 #custom-spotify.paused {
-    color: #ffffff;
+    color: @wb_text;
 }
 
 #custom-notifications {
@@ -89,9 +95,9 @@
 }
 
 #custom-notifications.dnd {
-    color: #ff0000;
+    color: @wb_critical;
 }
 
 #custom-notifications.notifications {
-    color: #ffffff;
+    color: @wb_text;
 }

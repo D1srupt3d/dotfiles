@@ -1,71 +1,159 @@
-# Hyprland Dotfiles - Graphite Theme
+# Hyprland Dotfiles
 
-A collection of dotfiles for a modern Hyprland setup on Arch Linux with a clean Graphite theme.
+A fully themed Hyprland desktop setup for Arch Linux with an interactive setup wizard, 9 color themes, and modular component installation.
 
-## 🖼️ Screenshots
+## Get Started
 
-![Desktop](assets/screenshots/desktop.png)
-*Main desktop with Waybar*
+```bash
+git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./setup.sh
+```
 
-![Terminal](assets/screenshots/terminal.png)
-*Terminal with custom prompt and ASCII art*
+That's it. The wizard walks you through everything.
+
+---
+
+## What the wizard does
+
+1. **Asks what you want** — fresh install, change theme, or add/remove components
+2. **You pick what to install** — only install the parts you want
+3. **You pick a color theme** — with a live color preview in the terminal
+4. **Shows a summary** — nothing happens until you confirm
+5. **Installs and configures** — packages, stow symlinks, services
+
+---
+
+## Themes
+
+| Theme | Style |
+|---|---|
+| Graphite | Dark gray and white (default) |
+| Catppuccin Mocha | Dark with soft purple and pink |
+| Catppuccin Latte | Light version, warm and creamy |
+| Nord | Arctic blues and clean slate gray |
+| Dracula | Dark purple with pink and cyan |
+| Tokyo Night | Deep navy blue with purple glow |
+| Rose Pine | Dark with lavender and rose tones |
+| Gruvbox | Warm retro oranges on dark brown |
+| Everforest | Muted greens and earthy tones |
+
+To switch themes at any time, just re-run `./setup.sh` and choose "Change theme".
+
+---
 
 ## Components
 
-- **Btop**: System monitor
-- **Fastfetch**: System information tool with custom ASCII art
-- **Ghostty**: Modern terminal emulator with Graphite theme
-- **Hyprland**: Modern Wayland compositor
-- **Hypridle**: Idle management tool
-- **Hyprlock**: Screen locker
-- **Hyprpaper**: Wallpaper daemon
-- **Hyprshot**: Screenshot tool
-- **Starship**: Cross-shell prompt with system information
-- **Swaync**: Modern notification daemon with control center
-- **Thunar**: File manager
-- **Waybar**: Highly customizable status bar
-- **Wofi**: Application launcher
-- **Wlogout**: Logout menu
-- **Zsh**: Shell configuration with custom aliases and functions
+| Component | What it does |
+|---|---|
+| Hyprland | The window manager |
+| Waybar | Top bar with clock, battery, and system info |
+| SwayNC | Notification popups and control center |
+| Wofi | App launcher (Super+Space) |
+| Wlogout | Power menu (shutdown, reboot, lock) |
+| Ghostty | Terminal emulator |
+| Zsh + Starship | Shell with a styled prompt |
+| Btop | System resource monitor |
+| Fastfetch | System info on terminal launch |
 
-## Directory Structure
+---
 
+## Key Bindings
+
+| Keys | Action |
+|---|---|
+| `Super + Space` | Open app launcher |
+| `Super + Enter` | Open terminal |
+| `Super + B` | Open Firefox |
+| `Super + E` | Open file manager |
+| `Super + N` | Toggle notification center |
+| `Super + L` | Lock screen |
+| `Super + Q` | Close window |
+| `Super + F` | Fullscreen |
+| `Super + T` | Toggle floating |
+| `Super + Print` | Region screenshot |
+| `Shift + Print` | Full screenshot |
+| `Super + [1-9]` | Switch workspace |
+| `Super + Ctrl + [1-9]` | Move window to workspace |
+
+---
+
+## Changing Your Wallpaper
+
+1. Add your wallpaper to `wallpapers/`
+2. Edit `~/.config/hypr/hyprpaper.conf`
+
+```ini
+preload = ~/dotfiles/wallpapers/your-wallpaper.jpg
+wallpaper = eDP-1,~/dotfiles/wallpapers/your-wallpaper.jpg
 ```
-.
-├── assets/        # Assets and screenshots
-├── btop/          # System monitor configuration
-├── fastfetch/     # System information configuration with custom ASCII art
-├── ghostty/       # Terminal configuration with Graphite theme
-├── hypr/          # Hyprland configuration
-├── hypridle/      # Idle management tool configuration
-├── hyprlock/      # Screen locker configuration
-├── hyprpaper/     # Wallpaper daemon configuration
-├── hyprshot/      # Screenshot tool configuration
-├── scripts/       # Utility scripts
-├── starship/      # Cross-shell prompt configuration
-├── swaync/        # Modern notification daemon configuration
-├── thunar/        # File manager configuration
-├── wallpapers/    # Wallpaper collection
-├── waybar/        # Status bar configuration
-├── wlogout/       # Logout menu configuration
-├── wofi/          # Application launcher configuration
-└── zsh/           # Shell configuration with custom aliases
+
+3. Reload with `Super + Shift + W`
+
+---
+
+## Advanced
+
+### Non-interactive install (power users)
+
+```bash
+./scripts/install.sh --dry-run   # preview what would be installed
+./scripts/install.sh --yes       # install everything without prompts
 ```
 
-## Features
+### Switch themes from the command line
 
-- Modern Wayland compositor with Hyprland
-- Customizable status bar with Waybar
-- Notification system with Swaync
-- Application launcher with Wofi
-- Power menu with Wlogout
-- System monitoring with Btop
-- System information display with Fastfetch and custom ASCII art
-- Terminal configuration with Ghostty
-- Cross-shell prompt with Starship
-- Custom Zsh configuration with aliases and functions
-- Screenshot tool with Hyprshot
-- Screen locker with Hyprlock
-- Wallpaper management with Hyprpaper
-- Idle management with Hypridle
-- **Graphite Theme**: Cohesive gray/white color scheme across all components
+```bash
+./scripts/switch-theme.sh catppuccin-mocha
+./scripts/switch-theme.sh --help   # list all themes
+```
+
+### Adding a custom theme
+
+```bash
+cp themes/graphite.theme themes/my-theme.theme
+# Edit the hex color values in my-theme.theme
+./scripts/switch-theme.sh my-theme
+```
+
+### Monitor setup
+
+Edit `~/.config/hypr/conf/monitor.conf`:
+
+```ini
+monitor = eDP-1, 2560x1600@60, 0x0, 1
+monitor = HDMI-A-1, 1920x1080@60, 2560x0, 1
+```
+
+---
+
+## Troubleshooting
+
+**Hyprland won't start**
+- Check logs: `~/.local/share/hyprland/hyprland.log`
+- Make sure your GPU drivers are installed
+
+**Waybar missing**
+- Reload: `Super + Shift + B`
+- Or manually: `waybar &`
+
+**No sound**
+- Check: `systemctl --user status pipewire`
+- Start: `systemctl --user start pipewire pipewire-pulse`
+
+**Screenshots not working**
+- Install hyprshot: `paru -S hyprshot`
+
+---
+
+## Requirements
+
+- Arch Linux (or Arch-based distro)
+- Internet connection
+- A user account with sudo access
+
+---
+
+## License
+
+MIT — do whatever you want with it.

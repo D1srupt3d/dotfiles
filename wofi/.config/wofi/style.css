@@ -1,12 +1,19 @@
-/* Wofi - Graphite Theme */
+/* Wofi - Theme colors injected by scripts/switch-theme.sh */
+/* THEME:START */
+@define-color wofi_bg rgba(55, 66, 71, 0.95);
+@define-color wofi_surface rgba(64, 76, 81, 0.8);
+@define-color wofi_border #404c51;
+@define-color wofi_text #d3c6aa;
+@define-color wofi_shadow rgba(0, 0, 0, 0.2);
+/* THEME:END */
 
 window {
     background-size: cover;
     background-position: center;
-    background-color: rgba(74, 74, 74, 0.95);  /* Graphite - Gray with transparency */
+    background-color: @wofi_bg;
     border-radius: 20px;
     font-family: "Hack Nerd Font";
-    border: 2px solid #3a3a3a;  /* Darker gray border */
+    border: 2px solid @wofi_border;
 }
 
 #outer-box {
@@ -20,7 +27,7 @@ window {
     display: block;
     margin: 20px auto;
     padding: 10px;
-    color: #ffffff;
+    color: @wofi_text;
     font-family: "Hack Nerd Font Mono";
     font-size: 12px;
     text-align: center;
@@ -35,11 +42,11 @@ window {
     margin: 10px;
     padding: 10px 15px;
     border: none;
-    color: #ffffff;
-    background-color: rgba(58, 58, 58, 0.8);  /* Darker gray with transparency */
+    color: @wofi_text;
+    background-color: @wofi_surface;
     border-radius: 30px;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px @wofi_shadow;
 }
 
 #inner-box {
@@ -56,7 +63,7 @@ window {
 
 #text {
     margin: 5px;
-    color: #ffffff;
+    color: @wofi_text;
     font-size: 14px;
 }
 
@@ -69,13 +76,13 @@ window {
 }
 
 #entry:selected {
-    background-color: rgba(58, 58, 58, 0.8);  /* Darker gray with transparency */
+    background-color: @wofi_surface;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px @wofi_shadow;
 }
 
 #text:selected {
-    color: #ffffff;
+    color: @wofi_text;
     font-weight: bold;
 }
 

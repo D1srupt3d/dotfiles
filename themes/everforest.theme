@@ -1,0 +1,31 @@
+# =============================================================
+# Everforest Dark Theme (Medium contrast)
+# Official palette: https://github.com/sainnhe/everforest
+# =============================================================
+THEME_NAME="everforest"
+
+BG="#2f383e"
+SURFACE="#374247"
+SURFACE2="#404c51"
+ACCENT="#4a5555"
+ACCENT2="#859289"
+BORDER_DIM="#859289"
+BORDER="#83c092"
+BORDER_BRIGHT="#a7c080"
+TEXT="#d3c6aa"
+TEXT_DIM="#859289"
+
+CRITICAL="#e67e80"
+CRITICAL_HOVER="#f08080"
+WARNING="#dbbc7f"
+INFO="#7fbbb3"
+
+HYPR_BORDER1="83c092ee"
+HYPR_BORDER2="a7c080ff"
+HYPR_BORDER3="d3c6aaff"
+HYPR_BORDER_INACTIVE="2f383e77"
+HYPR_SHADOW="2b3339ee"
+
+GHOSTTY_BG="#2f383e"
+GHOSTTY_FG="#d3c6aa"
+WALLPAPER="wallpapers/everforest.png"

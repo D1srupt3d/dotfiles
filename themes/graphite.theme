@@ -1,0 +1,35 @@
+# =============================================================
+# Graphite Theme
+# A clean dark monochrome theme
+# =============================================================
+THEME_NAME="graphite"
+
+# Base palette
+BG="#1a1a1a"
+SURFACE="#2a2a2a"
+SURFACE2="#3a3a3a"
+ACCENT="#4a4a4a"
+ACCENT2="#5a5a5a"
+BORDER_DIM="#6a6a6a"
+BORDER="#808080"
+BORDER_BRIGHT="#aaaaaa"
+TEXT="#ffffff"
+TEXT_DIM="#888888"
+
+# Semantic colors
+CRITICAL="#ff5555"
+CRITICAL_HOVER="#ff7777"
+WARNING="#ffaa55"
+INFO="#55aaff"
+
+# Hyprland rgba format (no # prefix, with alpha suffix)
+HYPR_BORDER1="808080ee"
+HYPR_BORDER2="aaaaaaff"
+HYPR_BORDER3="ccccccff"
+HYPR_BORDER_INACTIVE="1a1a1a77"
+HYPR_SHADOW="1a1a1aee"
+
+# Ghostty
+GHOSTTY_BG="#2a2a2a"
+GHOSTTY_FG="#ffffff"
+WALLPAPER="wallpapers/misc/clock.jpg"

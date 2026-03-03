@@ -1,0 +1,31 @@
+# =============================================================
+# Catppuccin Mocha Theme
+# Official palette: https://catppuccin.com/palette
+# =============================================================
+THEME_NAME="catppuccin-mocha"
+
+BG="#1e1e2e"
+SURFACE="#313244"
+SURFACE2="#45475a"
+ACCENT="#585b70"
+ACCENT2="#7f849c"
+BORDER_DIM="#7f849c"
+BORDER="#b4befe"
+BORDER_BRIGHT="#cdd6f4"
+TEXT="#cdd6f4"
+TEXT_DIM="#a6adc8"
+
+CRITICAL="#f38ba8"
+CRITICAL_HOVER="#eba0ac"
+WARNING="#fab387"
+INFO="#89b4fa"
+
+HYPR_BORDER1="cba6f7ee"
+HYPR_BORDER2="b4befeff"
+HYPR_BORDER3="cdd6f4ff"
+HYPR_BORDER_INACTIVE="1e1e2e77"
+HYPR_SHADOW="11111bee"
+
+GHOSTTY_BG="#1e1e2e"
+GHOSTTY_FG="#cdd6f4"
+WALLPAPER="wallpapers/catppuccin-mocha.png"

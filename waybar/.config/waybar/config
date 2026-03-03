@@ -86,12 +86,6 @@
         "tooltip": false,
         "on-click": "exec wlogout -p layer-shell"
       },
-      "custom/updates": {
-        "format": "󰚰 {}",
-        "tooltip": false,
-        "interval": 3600,
-        "exec": "exec $HOME/.config/waybar/checkupdate.sh"
-      },
       "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% 󰂯",

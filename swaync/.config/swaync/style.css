@@ -5,19 +5,21 @@
   font-size: 14px;
 }
 
-/* Color Definitions */
-@define-color cc-bg #2a2a2aF0;
-@define-color noti-border-color #5a5a5a;
-@define-color noti-bg #3a3a3aE6;
-@define-color noti-bg-hover #4a4a4aF0;
-@define-color noti-bg-focus #5a5a5aF0;
-@define-color noti-close-bg #ff5555;
-@define-color noti-close-bg-hover #ff7777;
-@define-color text-color #ffffff;
-@define-color text-color-disabled #888888;
-@define-color critical #ff5555;
-@define-color warning #ffaa55;
-@define-color info #55aaff;
+/* Color Definitions - injected by scripts/switch-theme.sh */
+/* THEME:START */
+@define-color cc-bg #374247F0;
+@define-color noti-border-color #859289;
+@define-color noti-bg #404c51E6;
+@define-color noti-bg-hover #4a5555F0;
+@define-color noti-bg-focus #859289F0;
+@define-color noti-close-bg #e67e80;
+@define-color noti-close-bg-hover #f08080;
+@define-color text-color #d3c6aa;
+@define-color text-color-disabled #859289;
+@define-color critical #e67e80;
+@define-color warning #dbbc7f;
+@define-color info #7fbbb3;
+/* THEME:END */
 
 /* Control Center */
 .control-center {

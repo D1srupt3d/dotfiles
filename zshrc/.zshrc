@@ -504,6 +504,10 @@ fi
 # Power User Aliases & Functions
 # ----------------------------------------------------------------------------
 
+# Dotfiles
+alias dots='bash ~/Documents/dotfiles/setup.sh'
+alias theme='bash ~/Documents/dotfiles/setup.sh'
+
 # Quick config editing
 alias hypredit='cursor ~/Documents/dotfiles/hypr/'
 alias wayedit='cursor ~/Documents/dotfiles/waybar/'

@@ -10,12 +10,12 @@ window-padding-y = 20
 window-height = 30
 window-width = 120
 
-# Graphite Theme - Background settings
-background = #2a2a2a
+# Theme colors - injected by scripts/switch-theme.sh
+# THEME:START
+background = #2f383e
+foreground = #d3c6aa
+# THEME:END
 background-opacity = 0.85
-
-# Graphite Theme - Text colors
-foreground = #ffffff
 
 # Terminal settings
 term = xterm-ghostty

@@ -1,0 +1,31 @@
+# =============================================================
+# Dracula Theme
+# Official palette: https://draculatheme.com/spec
+# =============================================================
+THEME_NAME="dracula"
+
+BG="#282a36"
+SURFACE="#343746"
+SURFACE2="#44475a"
+ACCENT="#6272a4"
+ACCENT2="#7b8cc4"
+BORDER_DIM="#6272a4"
+BORDER="#bd93f9"
+BORDER_BRIGHT="#ff79c6"
+TEXT="#f8f8f2"
+TEXT_DIM="#6272a4"
+
+CRITICAL="#ff5555"
+CRITICAL_HOVER="#ff6e6e"
+WARNING="#ffb86c"
+INFO="#8be9fd"
+
+HYPR_BORDER1="bd93f9ee"
+HYPR_BORDER2="ff79c6ff"
+HYPR_BORDER3="f8f8f2ff"
+HYPR_BORDER_INACTIVE="28293677"
+HYPR_SHADOW="191a21ee"
+
+GHOSTTY_BG="#282a36"
+GHOSTTY_FG="#f8f8f2"
+WALLPAPER="wallpapers/dracula.png"

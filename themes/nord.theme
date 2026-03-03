@@ -1,0 +1,31 @@
+# =============================================================
+# Nord Theme
+# Official palette: https://nordtheme.com/docs/colors-and-palettes
+# =============================================================
+THEME_NAME="nord"
+
+BG="#2e3440"
+SURFACE="#3b4252"
+SURFACE2="#434c5e"
+ACCENT="#4c566a"
+ACCENT2="#5e81ac"
+BORDER_DIM="#4c566a"
+BORDER="#81a1c1"
+BORDER_BRIGHT="#88c0d0"
+TEXT="#eceff4"
+TEXT_DIM="#d8dee9"
+
+CRITICAL="#bf616a"
+CRITICAL_HOVER="#d08770"
+WARNING="#ebcb8b"
+INFO="#81a1c1"
+
+HYPR_BORDER1="81a1c1ee"
+HYPR_BORDER2="88c0d0ff"
+HYPR_BORDER3="8fbcbbff"
+HYPR_BORDER_INACTIVE="2e344077"
+HYPR_SHADOW="2e3440ee"
+
+GHOSTTY_BG="#2e3440"
+GHOSTTY_FG="#eceff4"
+WALLPAPER="wallpapers/nord.png"

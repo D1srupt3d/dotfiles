@@ -1,0 +1,31 @@
+# =============================================================
+# Gruvbox Dark Theme
+# Official palette: https://github.com/morhetz/gruvbox
+# =============================================================
+THEME_NAME="gruvbox"
+
+BG="#282828"
+SURFACE="#3c3836"
+SURFACE2="#504945"
+ACCENT="#665c54"
+ACCENT2="#7c6f64"
+BORDER_DIM="#928374"
+BORDER="#d79921"
+BORDER_BRIGHT="#fabd2f"
+TEXT="#ebdbb2"
+TEXT_DIM="#a89984"
+
+CRITICAL="#cc241d"
+CRITICAL_HOVER="#fb4934"
+WARNING="#d79921"
+INFO="#458588"
+
+HYPR_BORDER1="d79921ee"
+HYPR_BORDER2="fabd2fff"
+HYPR_BORDER3="ebdbb2ff"
+HYPR_BORDER_INACTIVE="28282877"
+HYPR_SHADOW="1d2021ee"
+
+GHOSTTY_BG="#282828"
+GHOSTTY_FG="#ebdbb2"
+WALLPAPER="wallpapers/gruvbox.png"
