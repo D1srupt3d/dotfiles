@@ -1,0 +1,43 @@
+# Graphite Theme Dotfiles - .gitignore
+
+# Log files
+*.log
+btop/.config/btop/btop.log
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+.*.swp
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.temp
+
+# Git backups
+*.orig
+
+# SSH/GPG keys (safety)
+*.pem
+*.key
+id_rsa*
+*.gpg
+
+# Environment files with potential secrets
+.env
+.env.local
+secrets.conf

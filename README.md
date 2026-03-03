@@ -13,7 +13,6 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux with a clean 
 ## Components
 
 - **Btop**: System monitor
-- **Dunst**: Lightweight notification daemon
 - **Fastfetch**: System information tool with custom ASCII art
 - **Ghostty**: Modern terminal emulator with Graphite theme
 - **Hyprland**: Modern Wayland compositor
@@ -35,7 +34,6 @@ A collection of dotfiles for a modern Hyprland setup on Arch Linux with a clean 
 .
 ├── assets/        # Assets and screenshots
 ├── btop/          # System monitor configuration
-├── dunst/         # Notification daemon configuration
 ├── fastfetch/     # System information configuration with custom ASCII art
 ├── ghostty/       # Terminal configuration with Graphite theme
 ├── hypr/          # Hyprland configuration

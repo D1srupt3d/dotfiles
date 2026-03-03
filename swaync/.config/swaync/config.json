@@ -20,8 +20,8 @@
   "timeout-critical": 0,
   "fit-to-screen": true,
   "relative-timestamps": true,
-  "control-center-width": 400,
-  "control-center-height": 500,
+  "control-center-width": 600,
+  "control-center-height": 750,
   "notification-window-width": 400,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -60,13 +60,12 @@
     }
   },
   "widgets": [
-    "inhibitors",
     "title",
+    "buttons-grid",
     "dnd",
     "mpris",
     "volume",
     "backlight",
-    "buttons-grid",
     "notifications"
   ],
   "widget-config": {
@@ -98,21 +97,30 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "直",
+          "label": "\udb81\udda9 WiFi",
           "type": "toggle",
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
           "update_command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         },
         {
-          "label": "",
-          "type": "button",
-          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+          "label": "\udb81\udc83 VPN",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli connection up wg-opnsense || nmcli connection down wg-opnsense'",
+          "update_command": "sh -c '[[ $(nmcli connection show --active | grep wg-opnsense) ]] && echo true || echo false'"
         },
         {
-          "label": "",
+          "label": "\udb80\udcaf Bluetooth",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power on || bluetoothctl power off'",
+          "update_command": "sh -c '[[ $(bluetoothctl show | grep \"Powered: yes\") ]] && echo true || echo false'"
+        },
+        {
+          "label": "\udb80\ude4b Files",
           "type": "button",
-          "command": "brightnessctl set 50%"
+          "command": "nautilus"
         }
       ]
     }

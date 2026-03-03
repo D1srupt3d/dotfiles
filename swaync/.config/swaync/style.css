@@ -1,15 +1,334 @@
-/* SwayNC - Graphite Theme */
+/* SwayNC - Graphite Theme - Enhanced */
 
-@define-color cc-bg #4A4A4AB3;
-@define-color noti-border-color #4A4A4ACC;
-@define-color noti-bg #4A4A4AB3;
-@define-color noti-bg-opaque #4A4A4ACC;
-@define-color noti-bg-darker #3A3A3AB3;
-@define-color noti-bg-hover #5A5A5ACC;
-@define-color noti-bg-hover-opaque #5A5A5AE6;
-@define-color noti-bg-focus #4A4A4ACC;
-@define-color noti-close-bg #FFFFFF33;
-@define-color noti-close-bg-hover #FFFFFF4D;
-@define-color color #FFFFFF;
-@define-color color-disabled #FFFFFF80;
-@define-color bg-selected #4A4A4ACC;
+* {
+  font-family: "Hack Nerd Font";
+  font-size: 14px;
+}
+
+/* Color Definitions */
+@define-color cc-bg #2a2a2aF0;
+@define-color noti-border-color #5a5a5a;
+@define-color noti-bg #3a3a3aE6;
+@define-color noti-bg-hover #4a4a4aF0;
+@define-color noti-bg-focus #5a5a5aF0;
+@define-color noti-close-bg #ff5555;
+@define-color noti-close-bg-hover #ff7777;
+@define-color text-color #ffffff;
+@define-color text-color-disabled #888888;
+@define-color critical #ff5555;
+@define-color warning #ffaa55;
+@define-color info #55aaff;
+
+/* Control Center */
+.control-center {
+  background: @cc-bg;
+  border-radius: 15px;
+  border: 2px solid @noti-border-color;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  margin: 10px;
+  padding: 0;
+}
+
+.control-center-list {
+  background: transparent;
+  padding: 8px;
+}
+
+/* Notification Window */
+.notification-window {
+  background: transparent;
+  padding: 0;
+}
+
+/* Individual Notifications */
+.notification {
+  background: @noti-bg;
+  border-radius: 12px;
+  border: 1px solid @noti-border-color;
+  margin: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 200ms ease;
+}
+
+.notification:hover {
+  background: @noti-bg-hover;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.notification.critical {
+  border-left: 4px solid @critical;
+}
+
+.notification.warning {
+  border-left: 4px solid @warning;
+}
+
+/* Notification Content */
+.notification-content {
+  padding: 8px;
+}
+
+.summary {
+  font-weight: bold;
+  font-size: 15px;
+  color: @text-color;
+  margin-bottom: 4px;
+}
+
+.body {
+  color: @text-color;
+  opacity: 0.9;
+}
+
+.time {
+  font-size: 12px;
+  color: @text-color-disabled;
+  margin-top: 6px;
+}
+
+/* App Name/Icon */
+.app-name {
+  font-size: 12px;
+  color: @text-color-disabled;
+  font-weight: 600;
+}
+
+.notification-icon {
+  margin-right: 12px;
+}
+
+/* Close Button */
+.close-button {
+  background: @noti-close-bg;
+  color: @text-color;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 4px;
+  transition: all 150ms ease;
+}
+
+.close-button:hover {
+  background: @noti-close-bg-hover;
+  transform: scale(1.1);
+}
+
+/* Header */
+.control-center-header {
+  background: @noti-bg;
+  border-radius: 12px;
+  margin: 8px;
+  padding: 12px;
+  border: 1px solid @noti-border-color;
+}
+
+.control-center-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: @text-color;
+}
+
+/* DND Toggle */
+.dnd-toggle {
+  background: @noti-bg;
+  border-radius: 10px;
+  padding: 8px;
+  border: 1px solid @noti-border-color;
+  transition: all 150ms ease;
+}
+
+.dnd-toggle:hover {
+  background: @noti-bg-hover;
+}
+
+.dnd-toggle:checked {
+  background: #ff5555;
+}
+
+/* Widgets */
+.widget {
+  background: @noti-bg;
+  border-radius: 12px;
+  margin: 8px;
+  padding: 12px;
+  border: 1px solid @noti-border-color;
+}
+
+.widget-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: @text-color;
+  margin-bottom: 8px;
+}
+
+/* Buttons Grid */
+.buttons-grid {
+  padding: 12px;
+  background: @noti-bg;
+  border-radius: 12px;
+  margin: 8px;
+  border: 1px solid @noti-border-color;
+}
+
+.button-grid-button {
+  background: #3a3a3a;
+  border-radius: 20px;
+  border: 3px solid @noti-border-color;
+  padding: 40px;
+  margin: 10px;
+  font-size: 64px;
+  min-width: 160px;
+  min-height: 160px;
+  transition: all 200ms ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.button-grid-button label {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.button-grid-button:hover {
+  background: @noti-bg-hover;
+  border-color: #8a8a8a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.button-grid-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button-grid-button.active {
+  background: #5a5a5a;
+  border-color: #ffffff;
+}
+
+/* Toggle Button Styling (like DND) */
+.button-grid-button-toggle {
+  background: #3a3a3a;
+  border-radius: 12px;
+  border: 2px solid @noti-border-color;
+  padding: 20px 30px;
+  margin: 8px;
+  min-width: 250px;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 200ms ease;
+}
+
+.button-grid-button-toggle:hover {
+  background: @noti-bg-hover;
+  border-color: #8a8a8a;
+}
+
+.button-grid-button-toggle switch {
+  min-width: 60px;
+  min-height: 30px;
+  background: #4a4a4a;
+  border-radius: 15px;
+  border: 2px solid @noti-border-color;
+}
+
+.button-grid-button-toggle switch:checked {
+  background: #6a6a6a;
+  border-color: #ffffff;
+}
+
+.button-grid-button-toggle switch slider {
+  background: #ffffff;
+  border-radius: 50%;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+/* Volume/Brightness Sliders */
+.slider {
+  background: @noti-bg;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 8px;
+  border: 1px solid @noti-border-color;
+}
+
+scale trough {
+  background: #3a3a3a;
+  border-radius: 8px;
+  min-height: 8px;
+  min-width: 200px;
+}
+
+scale highlight {
+  background: linear-gradient(90deg, #5a5a5a, #8a8a8a);
+  border-radius: 8px;
+}
+
+scale slider {
+  background: #ffffff;
+  border-radius: 50%;
+  min-height: 18px;
+  min-width: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* MPRIS (Media Controls) */
+.widget-mpris {
+  background: @noti-bg;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid @noti-border-color;
+}
+
+.widget-mpris-player {
+  background: transparent;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: @text-color;
+}
+
+.widget-mpris-subtitle {
+  font-size: 13px;
+  color: @text-color-disabled;
+}
+
+/* Scrollbar */
+scrollbar {
+  background: transparent;
+  width: 8px;
+}
+
+scrollbar slider {
+  background: #5a5a5a;
+  border-radius: 4px;
+}
+
+scrollbar slider:hover {
+  background: #7a7a7a;
+}
+
+/* Clear All Button */
+.clear-all-button {
+  background: @noti-bg;
+  border-radius: 10px;
+  border: 1px solid @noti-border-color;
+  padding: 8px 16px;
+  margin: 8px;
+  color: @text-color;
+  font-weight: 600;
+  transition: all 150ms ease;
+}
+
+.clear-all-button:hover {
+  background: @noti-close-bg;
+  border-color: @noti-close-bg-hover;
+  transform: scale(1.05);
+}

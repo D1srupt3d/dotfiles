@@ -33,11 +33,12 @@
 #clock,
 #window,
 #pulseaudio,
-#custom-updates,
 #network,
 #battery,
 #custom-spotify,
-#custom-notifications {
+#custom-notifications,
+#custom-updates,
+#disk {
     padding: 6px 12px;
     background-color: #4a4a4a;  /* Gray for modules */
     border-radius: 30px;

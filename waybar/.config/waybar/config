@@ -6,6 +6,7 @@
         "clock",
         "hyprland/workspaces",
         "hyprland/submap",
+        "custom/updates",
         "custom/spotify"
         ],
       "modules-center": [
@@ -138,5 +139,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "interval": 1
+      },
+      "custom/updates": {
+        "format": "󰚰 {}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "~/.config/waybar/scripts/checkupdate.sh",
+        "on-click": "ghostty -e sh -c 'yay -Syu; read -p \"Press enter to close\"'",
+        "tooltip-format": "{} updates available"
       }
   }

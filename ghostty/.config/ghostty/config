@@ -29,3 +29,22 @@ gtk-wide-tabs = true
 
 # Copy on select
 copy-on-select = true
+
+# Cursor customization
+cursor-style = block
+cursor-style-blink = true
+
+# Shell integration
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title
+
+# Scrollback
+scrollback-limit = 10000
+
+# Mouse support
+mouse-hide-while-typing = true
+
+# Clipboard improvements
+clipboard-read = allow
+clipboard-write = allow
+clipboard-paste-protection = false

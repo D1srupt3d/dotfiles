@@ -13,7 +13,7 @@ mkdir -p "$BACKUP_DIR"
 
 # First, backup everything
 echo "Creating backup of all configs..."
-for dir in btop dunst fastfetch ghostty hypr waybar wofi wlogout; do
+for dir in btop fastfetch ghostty hypr swaync waybar wofi wlogout; do
     if [ -d "$HOME/.config/$dir" ]; then
         echo "Backing up $dir..."
         cp -r "$HOME/.config/$dir" "$BACKUP_DIR/"
@@ -34,7 +34,7 @@ stow -v -t ~ btop fastfetch ghostty starship wlogout zshrc
 
 # Stow packages that might affect the current session
 echo "Stowing session-related packages..."
-stow -v -t ~ dunst waybar wofi
+stow -v -t ~ swaync waybar wofi
 
 # Finally, stow Hyprland configs
 echo "Stowing Hyprland configs..."

@@ -499,3 +499,67 @@ fi
 
 # Performance profiling (uncomment to measure shell startup time)
 # zprof
+
+# ----------------------------------------------------------------------------
+# Power User Aliases & Functions
+# ----------------------------------------------------------------------------
+
+# Quick config editing
+alias hypredit='cursor ~/Documents/dotfiles/hypr/'
+alias wayedit='cursor ~/Documents/dotfiles/waybar/'
+alias zshedit='cursor ~/Documents/dotfiles/zshrc/.zshrc'
+
+# System maintenance
+alias cleanup='yay -Sc && yay -Yc'
+alias orphans='yay -Qtdq'
+alias mirrors='sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
+
+# Git shortcuts (enhanced)
+alias gundo='git reset --soft HEAD~1'
+alias gsave='git add -A && git commit -m "SAVEPOINT"'
+alias gwip='git add -A && git commit -m "WIP"'
+
+# Quick file operations
+alias cpwd='pwd | wl-copy'
+alias x='chmod +x'
+
+# Process management
+alias psg='ps aux | grep -v grep | grep -i -e VSZ -e'
+
+# Network shortcuts
+alias localip='ip -4 addr show | grep -oP "(?<=inet\s)\d+(\.\d+){3}"'
+alias publicip='curl -s ifconfig.me'
+
+# Directory jumping with fuzzy find
+cdf() {
+    if ! command -v fd &>/dev/null; then
+        echo "Error: fd is not installed"
+        return 1
+    fi
+    local dir
+    dir=$(fd --type d --hidden --follow --exclude .git 2>/dev/null | fzf --preview 'eza --tree --level=2 --color=always {} 2>/dev/null || ls -la {}') && cd "$dir"
+}
+
+# Quick note taking
+note() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S'): $*" >> ~/notes.txt
+}
+
+# Extract and cd
+extractcd() {
+    extract "$1" && cd "${1:r}"
+}
+
+# Git commit browser
+fshow() {
+    if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+        echo "Not in a git repository"
+        return 1
+    fi
+    
+    git log --graph --color=always \
+        --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+    fzf --ansi --no-sort --reverse --tiebreak=index \
+        --preview 'echo {} | grep -o "[a-f0-9]\{7\}" | head -1 | xargs -I % git show --color=always %' \
+        --bind "enter:execute:echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % git show --color=always % | less -R"
+}
