@@ -6,14 +6,13 @@
         "clock",
         "hyprland/workspaces",
         "hyprland/submap",
-        "custom/updates",
         "custom/spotify"
         ],
       "modules-center": [
         "hyprland/window"
         ],
       "modules-right": [
-        "network",
+        "custom/network",
         "temperature",
         "memory",
         "cpu",
@@ -23,8 +22,8 @@
         "custom/powermenu"
       ],
       "tray": {
-        "icon-size": 24,
-        "spacing": 10
+        "icon-size": 18,
+        "spacing": 6
       },
       "hyprland/window": {
         "format": "󰣇 {}",
@@ -60,12 +59,12 @@
           "default": ""
         }
       },
-      "network": {
-        "interface": "wlan0",
-        "tooltip-format-ethernet": "{ifname} ",
+      "custom/network": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/network-profile.sh",
         "interval": 2,
-        "format": "󰖩  {bandwidthDownBits}  {bandwidthUpBits}",
-        "format-disconnected": "󰖪"
+        "tooltip": true,
+        "exec-on-click": "nm-connection-editor"
       },
       "temperature": {
         "format": "󰔏 {temperatureC}°C",
@@ -133,13 +132,5 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "interval": 1
-      },
-      "custom/updates": {
-        "format": "󰚰 {}",
-        "tooltip": true,
-        "interval": 3600,
-        "exec": "~/.config/waybar/scripts/checkupdate.sh",
-        "on-click": "ghostty -e sh -c 'yay -Syu; read -p \"Press enter to close\"'",
-        "tooltip-format": "{} updates available"
       }
   }

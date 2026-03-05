@@ -17,18 +17,28 @@
 #waybar {
     background: transparent;
     color: @wb_text;
-    font-size: 16px;
+    font-size: 13px;
     font-family: "Hack Nerd Font";
 }
 
+#waybar > box {
+    margin: 3px 0;
+}
+
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 6px;
     color: @wb_text;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#workspaces button:hover {
+    color: @wb_text;
+    background-color: alpha(@wb_accent, 0.7);
 }
 
 #workspaces button.active {
     color: @wb_text;
-    background: @wb_accent;
+    background-color: @wb_accent;
 }
 
 #custom-powermenu,
@@ -40,29 +50,30 @@
 #window,
 #pulseaudio,
 #network,
+#custom-network,
 #battery,
 #custom-spotify,
 #custom-notifications,
-#custom-updates,
 #disk {
-    padding: 6px 12px;
+    padding: 4px 11px;
     background-color: @wb_accent;
-    border-radius: 30px;
-    margin: 8px 6px;
+    border-radius: 8px;
+    margin: 3px 4px;
     color: @wb_text;
+    transition: background-color 0.15s ease;
 }
 
 #window {
     color: @wb_text;
 }
 
-#custom-updates,
 #custom-powermenu,
 #pulseaudio,
 #cpu,
 #temperature,
 #memory,
 #network,
+#custom-network,
 #clock,
 #battery,
 #custom-spotify,
@@ -75,8 +86,8 @@
 }
 
 #custom-spotify {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
     margin-left: 0;
 }
 
@@ -89,8 +100,8 @@
 }
 
 #custom-notifications {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
     margin-left: 0;
 }
 
