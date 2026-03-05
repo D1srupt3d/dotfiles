@@ -504,14 +504,15 @@ fi
 # Power User Aliases & Functions
 # ----------------------------------------------------------------------------
 
-# Dotfiles
-alias dots='bash ~/Documents/dotfiles/setup.sh'
-alias theme='bash ~/Documents/dotfiles/setup.sh'
+# Dotfiles (change path if your repo is elsewhere)
+alias dots='bash ~/Github/dotfiles/setup.sh'
+alias theme='bash ~/Github/dotfiles/setup.sh'
 
 # Quick config editing
-alias hypredit='cursor ~/Documents/dotfiles/hypr/'
-alias wayedit='cursor ~/Documents/dotfiles/waybar/'
-alias zshedit='cursor ~/Documents/dotfiles/zshrc/.zshrc'
+alias hypredit='cursor ~/Github/dotfiles/hypr/'
+alias wayedit='cursor ~/Github/dotfiles/waybar/'
+alias ghostedit='cursor ~/Github/dotfiles/ghostty/.config/ghostty/config'
+alias zshedit='cursor ~/Github/dotfiles/zshrc/.zshrc'
 
 # System maintenance
 alias cleanup='yay -Sc && yay -Yc'

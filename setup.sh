@@ -171,13 +171,12 @@ swatch() {
     echo ""
 }
 
-swatch "  Graphite"          "#1a1a1a" "#3a3a3a" "#808080" "#aaaaaa" "#ffffff"
+swatch "  Monochrome"        "#1a1a1a" "#3a3a3a" "#808080" "#aaaaaa" "#ffffff"
 swatch "  Catppuccin Mocha"  "#1e1e2e" "#313244" "#cba6f7" "#f38ba8" "#cdd6f4"
 swatch "  Catppuccin Latte"  "#eff1f5" "#dce0e8" "#7287fd" "#d20f39" "#4c4f69"
 swatch "  Nord"              "#2e3440" "#434c5e" "#81a1c1" "#88c0d0" "#eceff4"
 swatch "  Dracula"           "#282a36" "#44475a" "#bd93f9" "#ff79c6" "#f8f8f2"
 swatch "  Tokyo Night"       "#1a1b26" "#2f3549" "#7aa2f7" "#bb9af7" "#c0caf5"
-swatch "  Rose Pine"         "#191724" "#26233a" "#c4a7e7" "#eb6f92" "#e0def4"
 swatch "  Gruvbox"           "#282828" "#504945" "#d79921" "#fb4934" "#ebdbb2"
 swatch "  Everforest"        "#2f383e" "#404c51" "#83c092" "#a7c080" "#d3c6aa"
 
@@ -185,20 +184,19 @@ echo ""
 echo -e "  ${DIM}Press Enter to open the selector…${RST}"
 read -rsp "" _
 
-CURRENT_THEME="graphite"
+CURRENT_THEME="monochrome"
 [ -f "$THEMES_DIR/.current" ] && CURRENT_THEME=$(cat "$THEMES_DIR/.current")
 make_state() { [ "$1" = "$CURRENT_THEME" ] && echo ON || echo OFF; }
 
 THEME=$(whiptail --title "  Pick a theme  " \
     --radiolist "  Current: ${CURRENT_THEME}  ·  Arrow keys · Space · Enter\n" \
-    $BOX_H $BOX_W 9 \
-    "graphite"         "  Graphite        — dark gray and white"               $(make_state graphite)         \
+    $BOX_H $BOX_W 8 \
+    "monochrome"       "  Monochrome      — black, gray and white"             $(make_state monochrome)       \
     "catppuccin-mocha" "  Catppuccin Mocha — dark with soft purple and pink"   $(make_state catppuccin-mocha) \
     "catppuccin-latte" "  Catppuccin Latte — light, warm and creamy"           $(make_state catppuccin-latte) \
     "nord"             "  Nord             — arctic blues and cool slate"       $(make_state nord)             \
     "dracula"          "  Dracula          — dark purple with pink and cyan"    $(make_state dracula)          \
     "tokyo-night"      "  Tokyo Night      — deep navy with purple glow"       $(make_state tokyo-night)      \
-    "rose-pine"        "  Rose Pine        — dark lavender and rose tones"     $(make_state rose-pine)        \
     "gruvbox"          "  Gruvbox          — warm retro oranges on dark brown" $(make_state gruvbox)          \
     "everforest"       "  Everforest       — muted greens and earthy tones"    $(make_state everforest)       \
     3>&1 1>&2 2>&3)

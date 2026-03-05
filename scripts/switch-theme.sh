@@ -203,20 +203,20 @@ inject_block "$HYPRLOCK_CONF" "\
 \$hl_input_bg    = rgba(${SURFACE//#/}88)"
 
 # ============================================================
-# 7. Wallpaper
+# 7. Hyprpaper (wallpaper path from theme)
 # ============================================================
-echo -e "\n${BOLD}[+] Wallpaper${NC}"
+echo -e "\n${BOLD}[+] Hyprpaper${NC}"
 
 if [ -n "$WALLPAPER" ]; then
     WALLPAPER_PATH="$DOTFILES_DIR/$WALLPAPER"
     if [ -f "$WALLPAPER_PATH" ]; then
         HYPRPAPER_CONF="$DOTFILES_DIR/hypr/.config/hypr/hyprpaper.conf"
-        cat > "$HYPRPAPER_CONF" <<EOF
-preload = $WALLPAPER_PATH
-wallpaper = ,$WALLPAPER_PATH
-splash = false
-EOF
-        echo -e "${GREEN}  ✓ hyprpaper.conf${NC}"
+        inject_block "$HYPRPAPER_CONF" "\
+wallpaper {
+    monitor =
+    path = $WALLPAPER_PATH
+    fit_mode = cover
+}"
     else
         echo -e "${YELLOW}  ⚠ Wallpaper not found: $WALLPAPER_PATH${NC}"
     fi
@@ -252,16 +252,15 @@ fi
 # Ghostty (auto-reloads via inotify file watching — no signal needed)
 echo -e "${GREEN}  ✓ Ghostty${NC}"
 
-# Hyprpaper
+# Hyprpaper (restart to pick up new path from config)
 if command -v hyprctl &>/dev/null && [ -n "$WALLPAPER" ]; then
-    WALLPAPER_PATH="$DOTFILES_DIR/$WALLPAPER"
-    pkill hyprpaper 2>/dev/null; sleep 0.5
-    hyprpaper &>/dev/null &
-    sleep 1
-    hyprctl hyprpaper preload "$WALLPAPER_PATH" &>/dev/null
-    hyprctl hyprpaper wallpaper ",$WALLPAPER_PATH" &>/dev/null \
-        && echo -e "${GREEN}  ✓ Wallpaper${NC}" \
-        || echo -e "${YELLOW}  ⚠ Wallpaper reload failed${NC}"
+    if [ -f "$DOTFILES_DIR/$WALLPAPER" ]; then
+        pkill hyprpaper 2>/dev/null
+        sleep 0.3
+        nohup hyprpaper >/dev/null 2>&1 &
+        disown
+        echo -e "${GREEN}  ✓ Hyprpaper${NC}"
+    fi
 fi
 
 echo -e "\n${GREEN}${BOLD}Theme '$THEME_NAME' applied!${NC}"

@@ -8,89 +8,45 @@
 /* THEME:END */
 
 window {
-    background-size: cover;
-    background-position: center;
     background-color: @wofi_bg;
-    border-radius: 20px;
+    border-radius: 12px;
     font-family: "Hack Nerd Font";
-    border: 2px solid @wofi_border;
+    border: 1px solid @wofi_border;
 }
 
 #outer-box {
-    margin: 10px;
-    border: none;
-    background-color: transparent;
-}
-
-#outer-box::before {
-    content: "";
-    display: block;
-    margin: 20px auto;
-    padding: 10px;
-    color: @wofi_text;
-    font-family: "Hack Nerd Font Mono";
-    font-size: 12px;
-    text-align: center;
-    white-space: pre;
-    background-image: url("d1srupt3d.txt");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100px;
+    margin: 12px;
+    padding: 0;
 }
 
 #input {
-    margin: 10px;
-    padding: 10px 15px;
+    margin-bottom: 8px;
+    padding: 10px 14px;
     border: none;
     color: @wofi_text;
     background-color: @wofi_surface;
-    border-radius: 30px;
-    font-size: 16px;
-    box-shadow: 0 0 10px @wofi_shadow;
-}
-
-#inner-box {
-    margin: 10px;
-    border: none;
-    background-color: transparent;
+    border-radius: 8px;
+    font-size: 15px;
 }
 
 #scroll {
-    margin: 5px;
-    border: none;
-    background-color: transparent;
+    margin: 0;
 }
 
 #text {
-    margin: 5px;
     color: @wofi_text;
     font-size: 14px;
 }
 
 #entry {
-    margin: 5px;
     padding: 8px 12px;
-    border-radius: 15px;
-    background-color: transparent;
-    transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
 #entry:selected {
     background-color: @wofi_surface;
-    border-radius: 15px;
-    box-shadow: 0 0 10px @wofi_shadow;
-}
-
-#text:selected {
-    color: @wofi_text;
-    font-weight: bold;
 }
 
 #img {
-    margin: 5px;
-    border-radius: 10px;
-}
-
-#img:selected {
-    background-color: transparent;
+    margin-right: 10px;
 }
