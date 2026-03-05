@@ -1,8 +1,8 @@
 # =============================================================
-# Graphite Theme
-# A clean dark monochrome theme
+# Monochrome Theme
+# Black, gray and white
 # =============================================================
-THEME_NAME="graphite"
+THEME_NAME="monochrome"
 
 # Base palette
 BG="#1a1a1a"

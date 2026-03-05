@@ -1,6 +1,8 @@
 # =============================================================
 # Tokyo Night Theme
 # Official palette: https://github.com/enkia/tokyo-night-vscode-theme
+# Wallpaper: tokyo-night.png (2) is default. Alt: tokyo-night-alt.png (8).
+# Switch by changing WALLPAPER below to wallpapers/tokyo-night-alt.png
 # =============================================================
 THEME_NAME="tokyo-night"
 

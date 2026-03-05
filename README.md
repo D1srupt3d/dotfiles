@@ -28,13 +28,12 @@ That's it. The wizard walks you through everything.
 
 | Theme | Style |
 |---|---|
-| Graphite | Dark gray and white (default) |
+| Monochrome | Black, gray and white (default) |
 | Catppuccin Mocha | Dark with soft purple and pink |
 | Catppuccin Latte | Light version, warm and creamy |
 | Nord | Arctic blues and clean slate gray |
 | Dracula | Dark purple with pink and cyan |
 | Tokyo Night | Deep navy blue with purple glow |
-| Rose Pine | Dark with lavender and rose tones |
 | Gruvbox | Warm retro oranges on dark brown |
 | Everforest | Muted greens and earthy tones |
 
@@ -111,7 +110,7 @@ wallpaper = eDP-1,~/dotfiles/wallpapers/your-wallpaper.jpg
 ### Adding a custom theme
 
 ```bash
-cp themes/graphite.theme themes/my-theme.theme
+cp themes/monochrome.theme themes/my-theme.theme
 # Edit the hex color values in my-theme.theme
 ./scripts/switch-theme.sh my-theme
 ```
