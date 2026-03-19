@@ -211,12 +211,26 @@ if [ -n "$WALLPAPER" ]; then
     WALLPAPER_PATH="$DOTFILES_DIR/$WALLPAPER"
     if [ -f "$WALLPAPER_PATH" ]; then
         HYPRPAPER_CONF="$DOTFILES_DIR/hypr/.config/hypr/hyprpaper.conf"
+<<<<<<< Updated upstream
         inject_block "$HYPRPAPER_CONF" "\
 wallpaper {
     monitor =
     path = $WALLPAPER_PATH
     fit_mode = cover
 }"
+=======
+        # Build wallpaper lines for every connected monitor
+        MONITOR_LINES=""
+        if command -v hyprctl &>/dev/null; then
+            while IFS= read -r mon; do
+                MONITOR_LINES="${MONITOR_LINES}wallpaper = ${mon},${WALLPAPER_PATH}\n"
+            done < <(hyprctl monitors -j 2>/dev/null | grep -oP '"name":\s*"\K[^"]+')
+        fi
+        # Fallback: use wildcard if hyprctl unavailable or returned nothing
+        [ -z "$MONITOR_LINES" ] && MONITOR_LINES="wallpaper = ,${WALLPAPER_PATH}\n"
+        printf "preload = %s\n%bsplash = false\n" "$WALLPAPER_PATH" "$MONITOR_LINES" > "$HYPRPAPER_CONF"
+        echo -e "${GREEN}  ✓ hyprpaper.conf${NC}"
+>>>>>>> Stashed changes
     else
         echo -e "${YELLOW}  ⚠ Wallpaper not found: $WALLPAPER_PATH${NC}"
     fi
